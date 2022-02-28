@@ -1,0 +1,12 @@
+izu - amount_diamonds // количества орешков, которые расколола белка
+a - size_of_squares_state // размер Государства Квадратов 
+Tele2 - result_impuls_array // результирующий массив-импульс
+salary -  reordered_salary_array // массив, содержащий переупорядоченные зарплаты
+result_list - searching_word_list //  массив нахождения слова в соответствующей строке
+summa -sum_of_all_numbers // сумме всех чисел
+result_str - decode_string // расшифрованная строка
+toner - amount_of_toner_consumed // колличество тонера 
+tabl - symbol_table  // таблица символов
+result - difference_of_numbers_string // разность чисел в формате строки
+result - array_of_numbers_in_decimal_system // массив чисел в десятичной системе
+count - time_car_to_reach_end_road // время за которое автомобиль доберётся до конца дороги

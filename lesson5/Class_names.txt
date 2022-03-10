@@ -1,0 +1,27 @@
+3.1. Улучшите пять имён классов в вашем коде.
+
+class Computer - class Device
+class Remeslennik - class Сraftsman
+class KrestYanin -class Peasant
+class LinkedList2 - class DoubleLinkedList
+class LinkedList - class SimpleLinkedList
+
+
+3.2. Улучшите семь имён методов и объектов 
+
+class Queue:
+1. def enqueue() - def add_item_in_tail() // метод добавление элемента в хвост  
+2. def dequeue() - def pop_item() // метод извлечения элемента из головы очереди
+
+class Deque:
+3. def addFront() - def add_item_in_head() // метод добавления элемента в голову
+4. def addTail() - def add_item_in_tail() // метод добавление элемента в хвост
+5. def removeFront() - def delete_head() // метод удаление элемента из головы
+6. def size() - def len_deque() // метод определения длинны очереди
+
+class LinkedList:
+7. def len() - def len_linkedList // метод вычисления текущей длины списка
+
+class Stack:
+8.  def push() - def add_item_in_tail() // метод добавление элемента в хвост
+

@@ -1,0 +1,16 @@
+
+3.1. Сделайте в своём коде три примера наглядных методов-фабрик
+1. person1 = Person('Sarah', 25)
+   person2 = Person.Cookeer('Sarah', 25)
+
+2. Data t = new Data(15)   
+   Data t = Data.creatObject(15)
+
+3. Circle c1 = new Circle(5)
+   Circle c0 = Circle.small_circle(5)
+
+3.2. Если вы когда-нибудь использовали интерфейсы или абстрактные классы, 
+    напишите несколько примеров их правильного именования.  
+
+Class ChessFactory  // класс создания шахматных фигур
+Class CeateDivice  // класс создания устройств

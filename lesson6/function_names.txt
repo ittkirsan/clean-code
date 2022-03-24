@@ -1,10 +1,10 @@
 
-1. def palindrome - def is_palindrome // функция, проверяет является листрока палиндромом. Используем префикс
+1. def palindrome - def is_palindrome // функция, проверяет является ли строка палиндромом. Используем префикс
 2. def find - find_node_value // метод поиска элемента по значению. Используем глагол и объект.
 3. def delete - def delete_node_value // функция удаляет узел по значению.
 4. def clean -  def clean_orderlist // функция очищает  упорядоченный список.
 5. def add  - add_new_node_by_value // метод добавляет новый узел по значению.
-6. def len - def length_linkedlist // метод определения длины linkedList.
+6. def len - def len_simple_linkedlist // метод определения длины linkedList.
 7. def find - def find_first_node_by_value // поиск первого узла по значению.
 8. def resize - def resize_dinarray_buffer_capacity // метод меняющий размер емкости буфера динамического массива.
 9. def append - def add_element_end_array // метод добавляет элемент в конец массива.

@@ -20,7 +20,7 @@ class Deque:
 6. def size() - def len_deque() // метод определения длинны очереди
 
 class LinkedList:
-7. def len() - def len_linkedList // метод вычисления текущей длины списка
+7. def len() - def len_simple_linkedList // метод вычисления текущей длины списка
 
 class Stack:
 8.  def push() - def add_item_in_tail() // метод добавление элемента в хвост

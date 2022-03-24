@@ -1,0 +1,159 @@
+Внесите 15 правок в свой код с учётом рекомендаций из данного занятия,
+и напишите по каждой, как и что конкретно вы улучшили.
+
+Задача 2 "Одометр" 
+
+    Переменные, используемые в вычислениях внутри цикла distance_traveled, time_trip, 
+объявлены и инициированы непосредственно перед циклом 
+    После завершения вычислений переменной time_trip присвоено "недопустимые" значения.
+    
+def odometer(oksana):
+    
+    if len(oksana) % 2 == 0:
+        mas = len(oksana)
+    else:
+        mas = len(oksana) - 1
+
+    time_trip = 0
+    distance_traveled = 0
+
+    for i in range(1, mas, 2):
+        distance_traveled = distance_traveled + oksana[i-1] * (oksana[i]-time_trip)
+        time_trip = oksana[i]
+
+    time_trip = -1
+    return distance_traveled
+
+В задаче 3 "Освобождение Государства Квадратов".
+    ввел проверку на недопустимость и корректность значений
+    переменная объявлена и инициирована непосредственно перед циклом
+    присваивается "недопустимое" значение массивам -очищаем их.
+def ConquestCampaign(N, M, L, battalion):
+
+    if not isinstance(N, int) or N < 1:
+        raise TypeError(f'Значение N не является числом или менее 1:{N}')
+    elif not isinstance(M, int) or M < 1:
+        raise TypeError(f'Значение M не является числом или менее 1:{M}')
+    elif not isinstance(L, int) or L < 1:
+        raise TypeError(f'Значение L не является числом или менее 1:{L}')
+    elif not isinstance(battalion, list):
+        raise TypeError(f'В battalion передан не массив:{battalion}')
+
+    size_of_squares_state = [[0]*M for i in range(N)]
+    days = 1
+
+    for i in range(0, len(battalion), 2):
+        k = battalion[i] - 1
+        l = battalion[i+1] - 1
+        size_of_squares_state[k][l] = 1
+
+    b = [[1]*M for i in range(N)]
+    while size_of_squares_state != b:
+        c = [[size_of_squares_state[i][j] for j in range(M)] for i in range(N)]
+        for i in range(N):
+            for j in range(M):
+                if size_of_squares_state[i][j] == 1:
+                    if j < M-1:
+                        c[i][j+1] = 1
+                    if j > 0:
+                        c[i][j-1] = 1
+                    if i < N-1:
+                        c[i+1][j] = 1
+                    if i > 0:
+                        c[i-1][j] = 1
+        size_of_squares_state = c
+        days += 1
+
+    size_of_squares_state = size_of_squares_state.clear() 
+    c = c.clear()  
+
+    return days
+
+Задача 3 SynchronizingTables  
+    переменную reordered_salary_array иницилизировали перед циклом
+
+def SynchronizingTables(N, ids, salary):
+    ids_new = []
+    for i in range(N):
+        ireordered_salary_arrayds_new.append(ids[i])
+     = []
+    for i in range(N):
+        reordered_salary_array.append(salary[i])
+
+    ids_new.sort()
+    reordered_salary_array.sort()
+
+    for i in ids_new:
+        index = ids.index(i)
+        for j in reordered_salary_array:
+            for k in range(N):
+                if salary[k] == j:
+                    salary[k], salary[index] = salary[index], salary[k]
+
+    return reordered_salary_array
+
+Задача 11 - "РАЙНЕХАРТ".
+    ввел завершение работы с переменными
+    добавил проверку типов данных
+
+def BigMinus(s1, s2):
+
+    if not isinstance(s1, str):
+        raise TypeError(f'Значение s1 не является строковым типом:{s1}')
+    elif not isinstance(s2, str):
+        raise TypeError(f'Значение s2 не является строковым типом:{s2}')
+
+    if len(s1) == len(s2):
+        for i in range(len(s1)):
+            if int(s1[i]) > int(s2[i]):
+                s_max = s1
+                s_min = s2
+                break
+            else:
+                s_min = s1
+                s_max = s2
+                break
+
+    elif len(s1) < len(s2):
+        s_min = s1
+        s_max = s2
+    else:
+        s_max = s1
+        s_min = s2
+    N1 = len(s_max)
+    N2 = len(s_min)
+
+    nst = ""
+
+    ....много кода    
+
+    nst = "***ERROR***"
+
+    return result
+
+Задача 16 - Шопоголики
+    ввел проверку на корректность переменной
+
+def MaximumDiscount(N, price):
+
+    spisok = sorted(price, reverse=True)
+    max_discont = 0
+
+    for i in range(2, len(spisok), 3):
+        max_discont += spisok[i]
+    assert max_discount >= 0
+
+    return max_discont
+
+Задача 18 - "Мистер Робот и Корпорация Зла"
+    иницилизировал переменую перед применением
+def MisterRobot(N: int, data: int):
+    
+    ....много кода
+
+    ETALON = sorted(data)                
+    if data == ETALON:
+        return True
+    else:
+        return False
+    

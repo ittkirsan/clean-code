@@ -69,7 +69,7 @@ def ConquestCampaign(N, M, L, battalion):
 
     return days
 
-Задача 3 SynchronizingTables  
+Задача 5 SynchronizingTables  
     переменную reordered_salary_array иницилизировали перед циклом
 
 def SynchronizingTables(N, ids, salary):

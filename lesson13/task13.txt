@@ -1,0 +1,91 @@
+Приведите 5 примеров вашего кода, где вместо массивов можно использовать более
+безопасные структуры данных, или же работа с самими массивами может выполняться
+без их прямой индексации.
+
+1. Задача SumOfThe.py
+В этой задаче чтобы избежать прямой индексации можно заменить массив на LinkedList
+def SumOfThe(N, data):
+    sum_of_negative_numbers = 0
+    sum_of_positive_numbers = 0
+    sum_of_all_numbers = 0
+    for i in data:
+        if i < 0:
+            sum_of_negative_numbers += i
+        else:
+            sum_of_positive_numbers += i
+
+    sum_of_all_numbers = sum_of_negative_numbers + sum_of_positive_numbers
+    sum_of_all_numbers_in_summary = int(sum_of_all_numbers/2)
+
+    return sum_of_all_numbers_in_summary
+
+2. Задача 2 odometer.py
+В этой задаче тоже можно заменить массив на LinkedList
+def odometer(oksana):
+    if len(oksana) % 2 == 0:
+        mas = len(oksana)
+    else:
+        mas = len(oksana) - 1
+
+    time_trip = 0
+    distance_traveled = 0
+    for i in range(1, mas, 2):
+        distance_traveled = distance_traveled + \
+            oksana[i-1] * (oksana[i]-time_trip)
+        time_trip = oksana[i]
+    time_trip = -1
+    return distance_traveled
+
+3. Задача 10. Экономим тонер
+В этой задаче применить можно словарь для избежания обращения по индексам
+def PrintingCosts(Line):
+    symbol_table = [' ', 0, '!', 9, '"', 6, '#', 24, '$', 29, '%', 22, '&', 24, "'", 3, '(', 12, ')', 12, '*', 17, '+', 13,
+                    ',', 7, '-', 7, '.', 4, '/', 10, '0', 22, '1', 19, '2', 22, '3', 23, '4', 21, '5', 27, '6', 26, '7', 16,
+                    '8', 23, '9', 26, ':', 8, ';', 11, '<', 10, '=', 14, '>', 10, '?', 15, '@', 32, 'A', 24, 'B', 29, 'C', 20,
+                    'D', 26, 'E', 26, 'F', 20, 'G', 25, 'H', 25, 'I', 18, 'J', 18, 'K', 21, 'L', 16, 'M', 28, 'N', 25, 'O', 26,
+                    'P', 23, 'Q', 31, 'R', 28, 'S', 25, 'T', 16, 'U', 23, 'V', 19, 'W', 26, 'X', 18, 'Y', 14, 'Z', 22, '[', 18,
+                    '\\', 10, ']', 18, '^', 7, '_', 8, '`', 3, 'a', 23, 'b', 25, 'c', 17, 'd', 25, 'e', 23, 'f', 18, 'g', 30,
+                    'h', 21, 'i', 15, 'j', 20, 'k', 21, 'l', 16, 'm', 22, 'n', 18, 'o', 20, 'p', 25, 'q', 25, 'r', 13, 's', 21,
+                    't', 17, 'u', 17, 'v', 13, 'w', 19, 'x', 13, 'y', 24, 'z', 19, '{', 18, '|', 12, '}', 18, '~', 9]
+
+    amount_of_toner_consumed = 0
+    CHAR_NOT_INCLUDED = 23
+    for el in Line:
+        for j in range(0, len(symbol_table), 2):
+            if el == symbol_table[j]:
+                amount_of_toner_consumed += symbol_table[j + 1]
+                break
+        if el != symbol_table[j]:
+            amount_of_toner_consumed += CHAR_NOT_INCLUDED
+    return amount_of_toner_consumed  
+
+4. Задача 16. 
+В данной задаче можно использовать структуру OrderList. 
+
+def MaximumDiscount(N, price):
+
+    spisok = sorted(price, reverse=True)
+    max_discont = 0
+
+    for i in range(2, len(spisok), 3):
+        max_discont += spisok[i]
+
+    return max_discont
+
+5. Задача 4. Безумный Макс
+При решении этой задачи можно использовать структуру данных или ононаправленый список 
+или двунаправленный список
+
+def MadMax(N, Tele):
+    Tele.sort()
+    result_impuls_array = []
+
+    for i in range(N-1):
+        if i < (N-1)/2:
+            result_impuls_array.append(Tele[i])
+
+    for i in range(N-1, -1, -1):
+        if i >= (N-1)/2:
+            result_impuls_array.append(Tele[i])
+
+    return result_impuls_array    

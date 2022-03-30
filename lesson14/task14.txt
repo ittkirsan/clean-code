@@ -1,0 +1,82 @@
+Прокомментируйте 7 мест в своём коде там, где это явно уместно.
+Eсли вы раньше делали комментарии к коду, найдите 5 мест, где эти комментарии были излишни, 
+удалите их и сделайте сам код более наглядным.
+
+Задача 2. Поездка на мотоцикле
+def odometer(oksana):
+    # Если длина массива нечетна, то уменьшаем ее на 1. 
+    # мотоциклист не перемещался
+    if len(oksana) % 2 == 0:
+        mas = len(oksana)
+    else:
+        mas = len(oksana) - 1
+
+Задача 3 ConquestCampaign
+def ConquestCampaign(N, M, L, battalion):
+
+    # проверкa на недопустимость и корректность значений
+    if not isinstance(N, int) or N < 1:
+        raise TypeError(f'Значение N не является числом или менее 1:{N}')
+    elif not isinstance(M, int) or M < 1:
+        raise TypeError(f'Значение M не является числом или менее 1:{M}')
+    elif not isinstance(L, int) or L < 1:
+        raise TypeError(f'Значение L не является числом или менее 1:{L}')
+    elif not isinstance(battalion, list):
+        raise TypeError(f'В battalion передан не массив:{battalion}')
+
+    size_of_squares_state = [[0]*M for i in range(N)]
+
+Задача HashTable
+ 
+class HashTable:
+    '''Класс представления хеш-таблицы'''
+
+    def __init__(self, sz: int, stp: int):
+        '''Иницилизация хеш-таблицы'''
+        self.size = sz   # размер хэш-таблицы
+        self.step = stp  # длина шага для поиска следующего свободного слота
+        self.slots = [None] * self.size
+
+    def hash_fun(self, value):
+        #Проверка типа данных
+        if not isinstance(value, str):
+            return None
+        #расчитывает и возвращает корректный индекс слота
+        return sum(value.encode('utf-8')) % self.size
+
+    def seek_slot(self, value: str):
+        '''Поиск слота'''
+        if not isinstance(value, str):
+            return None
+
+        .... много кода    
+
+Задача NativeCache
+
+class NativeCache:
+    def __init__(self, sz):
+        self.size = sz        # размер хэш-таблицы
+        self.slots = [None] * self.size     
+        self.values = [None] * self.size    
+....много кода
+    def get(self, key):
+
+        if not isinstance(key, str):
+            return None
+        if self.is_key(key):
+            # добавляем новое обращение к ключу
+            self.hits[self.slots.index(key)] += 1
+            return self.values[self.hash_fun(key)]
+        return None
+
+    def put(self, key, value):
+
+        index = self.seek_slot(key)
+        if index is not None:    # если есть свободное место или ключ key
+            if self.slots[index] == key:
+                self.values[index] = value
+
+            else:    # ключа key нет, но есть свободный слот
+                self.slots[index] = key
+                self.values[index] = value
+        else:    # если нет такого ключа или свободных слотов

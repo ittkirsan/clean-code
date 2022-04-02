@@ -1,0 +1,64 @@
+Внесите 12 правок в свои комментарии, дополнительно указывая, по какому из вышеприведённых 
+пунктов была сделана та или иная правка.
+
+Информативные комментарии.
+class HashTable:
+    '''Класс представления хеш-таблицы'''
+
+    def __init__(self, sz: int, stp: int):
+        '''Иницилизация хеш-таблицы'''
+        self.size = sz   # размер хэш-таблицы
+        self.step = stp  # длина шага для поиска следующего свободного слота
+        self.slots = [None] * self.size
+
+    def hash_fun(self, value):
+        #Проверка типа данных
+        if not isinstance(value, str):
+            return None
+        #расчитывает и возвращает корректный индекс слота
+        return sum(value.encode('utf-8')) % self.size
+
+    def seek_slot(self, value: str):
+        '''Поиск слота'''
+        if not isinstance(value, str):
+            return None
+
+Прояснение
+Задача 20. Делаем национальный редактор "Лапоть"
+комментируем код операции, указанной в условии задачи
+def BastShoe(command):
+    global flag, list_string, undo
+    ADD_TO_END = '1'  # добавить в конец строки
+    DEL_SYMBOLS = '2'  # удалить символы
+    GET_SYNBOL = '3'  # выдать символ
+    UNDO = '4'  # отмена последней операции ADD_TO_END или DEL_SYMBOLS
+    REDO = '5' # выполнить заново последнюю отменённую с помощью Undo операцию
+
+
+Прояснение
+Задача 10.Экономим тонер
+
+    amount_of_toner_consumed = 0
+    CHAR_NOT_INCLUDED = 23  #объем тонера, если встретился символ, не учитываемый таблицей
+    for el in Line:      
+    
+          
+Усиление
+class NativeDictionary:
+    def hash_fun(self, key): # в качестве key поступают строки! всегда возвращает корректный индекс слота!
+        if self.size == 0:
+            return None
+        b = key.encode("utf-8") 
+        sum_b = 0
+        for i in range(len(b)):
+            sum_b += b[i]
+        return sum_b % self.size     
+
+Прояснение
+Задача 9 TheRabbitsFoot
+def TheRabbitsFoot(s, encode):
+    # encode = true (зашифровывает исходную строку)
+    # encode = false (расшифровывает исходную строку)
+
+    if encode == True:
+    ....много кода        
